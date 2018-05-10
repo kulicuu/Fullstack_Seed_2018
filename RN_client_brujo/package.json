@@ -1,0 +1,63 @@
+{
+  "name": "BrujoTerm",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "accounting": "latest",
+    "amazon-cognito-identity-js": "latest",
+    "aws-amplify": "0.2.14",
+    "aws-amplify-react-native": "latest",
+    "aws-sdk": "2.226.1",
+    "bash-color": "latest",
+    "buffer": "5.1.0",
+    "coffeescript": "latest",
+    "create-react-class": "latest",
+    "immutable": "4.0.0-rc.9",
+    "jsonwebtoken": "latest",
+    "lodash": "4.17.4",
+    "primus": "latest",
+    "react": "16.3.2",
+    "react-native": "0.55.3",
+    "react-native-blur": "latest",
+    "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera",
+    "react-native-event-listeners": "latest",
+    "react-native-fa-icons": "latest",
+    "react-native-fbsdk": "0.7.0",
+    "react-native-fontawesome": "latest",
+    "react-native-fs": "latest",
+    "react-native-img-cache": "1.5.3",
+    "react-native-maps": "0.21.0",
+    "react-native-material-dropdown": "latest",
+    "react-native-s3": "latest",
+    "react-native-table-component": "latest",
+    "react-native-vector-icons": "latest",
+    "react-redux": "latest",
+    "redux": "latest",
+    "redux-thunk": "latest",
+    "shortid": "latest",
+    "sockette": "latest"
+  },
+  "devDependencies": {
+    "babel-jest": "22.4.1",
+    "babel-preset-react-native": "4.0.0",
+    "gulp": "^4.0.0",
+    "gulp-clean": "latest",
+    "gulp-coffee": "latest",
+    "gulp-coffee-react-transform": "latest",
+    "gulp-coffeelint": "latest",
+    "gulp-coffeescript": "latest",
+    "gulp-ignore": "latest",
+    "gulp-util": "latest",
+    "highland": "latest",
+    "jest": "22.4.2",
+    "monitorctrlc": "^1.0.1",
+    "react-test-renderer": "16.3.0-alpha.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

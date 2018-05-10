@@ -1,0 +1,31 @@
+{
+  "project_info": {
+    "project_number": "612773366919",
+    "project_id": "vinder-1522893849896"
+  },
+  "client": [
+    {
+      "client_info": {
+        "android_client_info": {
+          "package_name": "com.vinder_react_native"
+        }
+      },
+      "oauth_client": [
+
+        {
+          "client_id": "612773366919-8mmp70crnqa6jdur16vrt34daajjig2g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vinder_react_native"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARhG_ug0PqMpNlp0ln474Yk6hvp2uX7zQ"
+        }
+      ]
+    }
+  ],
+  "configuration_version": "1"
+}

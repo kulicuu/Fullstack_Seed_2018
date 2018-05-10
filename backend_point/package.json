@@ -1,0 +1,24 @@
+{
+    "private": "true",
+    "dependencies": {
+        "async": "latest",
+        "aws-sdk": "latest",
+        "bash-color": "latest",
+        "bcrypt": "latest",
+        "bluebird": "latest",
+        "bunyan": "latest",
+        "coffeescript": "latest",
+        "express": "latest",
+        "immutable": "latest",
+        "jsonwebtoken": "latest",
+        "lodash": "4.17.4",
+        "morgan": "latest",
+        "uuid": "latest",
+        "primus": "latest",
+        "winston": "latest",
+        "redis": "latest",
+        "rethinkdb": "latest",
+        "shortid": "latest",
+        "ws": "latest"
+    }
+}

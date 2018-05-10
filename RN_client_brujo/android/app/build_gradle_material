@@ -1,0 +1,18 @@
+compile (project(':react-native-camera')) {
+    exclude group: "com.google.android.gms"
+    compile 'com.android.support:exifinterface:27.1.1'
+    compile ('com.google.android.gms:play-services-vision:15.0.0') {
+        force = true
+    }
+}
+implementation 'com.android.support:support-v4:26.1.0'
+
+
+
+compile (project(':react-native-camera')) {
+    exclude group: "com.google.android.gms"
+    compile 'com.android.support:exifinterface:27.1.1'
+    compile ('com.google.android.gms:play-services-vision:15.0.0') {
+        force = true
+    }
+}

@@ -1,0 +1,17 @@
+
+
+
+choose photos station:
+
+2 text blurbs
+2 buttons
+12 image slots
+
+
+button - "post" -- (explain what this button does)
+
+button - <camera icon> -- (explain what it does)
+
+
+
+----------------------------------
