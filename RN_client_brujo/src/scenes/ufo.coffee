@@ -259,6 +259,9 @@ handle_try_getId =  ->
 
 
 scrollview_innards = ->
+    # c (JSON.stringify @props.all_users)
+    # c '777777', Imm.List.isList(@props.all_users)
+    # x3 = @props.all_users
     View
         style:
             display: 'flex'
@@ -267,117 +270,52 @@ scrollview_innards = ->
             height: '100%'
             flexDirection: 'column'
             alignItems: 'center'
-        Button
-            title: "test1"
-            onPress: @props.test1
-            style:
-                width: 100
-                height: 100
-                backgroundColor: 'white'
-            # "test1"
+        # Button
+        #     title: "test1"
+        #     onPress: @props.test1
+        #     style:
+        #         width: 100
+        #         height: 100
+        #         backgroundColor: 'white'
 
         Text
             style:
-                fontSize: 20
+                fontSize: 12
                 color: 'cadetblue'
             "Terebinth #{@props.signin_test_state}"
         Text
             style:
                 fontSize: 8
-                color: 'darkgrey'
+                # color: 'darkgrey'
             "local websocket http connection: :#{@props.counter_zero}"
-        Text
-            style:
-                fontSize: 4
-                color: 'darkgrey'
-            "local websocket https connection: :#{@props.counter_one}"
+        # Text
+        #     style:
+        #         fontSize: 4
+        #         # color: 'darkgrey'
+        #     "local websocket https connection: :#{@props.counter_one}"
 
-        Text
-            style:
-                fontSize: 6
-            if  @props.net_info and (@props.net_info.has 'type')
-                "net_info: type #{@props.net_info.get 'type' }"
-        Text
-            style:
-                fontSize: 6
-            if  @props.net_info and (@props.net_info.has 'effectiveType')
-                "net_info.effectiveType: #{ @props.net_info.effectiveType }"
-        Text
-            style:
-                fontSize: 10
-            "<Cognito-State>"
-        TouchableOpacity
-            onPress: =>
+        _.map @props.all_users, (v, idx) ->
             View
+                key: "textusers:#{idx}"
                 style:
-                    width: 100
-                    height: 20
-                    backgroundColor: 'ivory'
-                    display: 'flex'
-                    justifyContent: 'center'
-                    alignItems: 'center'
-                Text
-                    style:
-                        fontSize: 8
-                    "Logout User"
-        Text
-            style:
-                fontSize: 10
-            "<Local-Storage-Cognito>"
-        TouchableOpacity
-            onPress: =>
-            View
-                style:
-                    width: 100
-                    height: 20
-                    backgroundColor: 'ivory'
-                    display: 'flex'
-                    justifyContent: 'center'
-                    alignItems: 'center'
-                Text
-                    style:
-                        fontSize: 8
-                    "Clear Local Storage"
-        TouchableOpacity
-            onPress: =>
-                handle_cognito_auth_030.bind(@) tig
-            View
-                style:
-                    width: 100
-                    height: 20
-                    backgroundColor: 'ivory'
-                    display: 'flex'
-                    justifyContent: 'center'
-                    alignItems: 'center'
-                Text
-                    style:
-                        fontSize: 8
-                    "Update Cognito AuthState"
-        TouchableOpacity
-            onPress: =>
-                handle_try_getId.bind(@)()
-            View
-                style:
-                    display: 'flex'
-                    width: 100
-                    height: 20
-                    justifyContent: 'center'
+                    margin: 10
                 Text
                     style:
                         fontSize: 10
-                    "try getId call"
-        if @state.current_user isnt null
-            View null,
-                Text
-                    style:
-                        fontSize: 8
-                    "current_user"
-                View null, cursive_json_markup_keyset.bind(@) @state.current_user, 0
+                    v.email
+                # Text
+                #     style:
+                #         fontSize: 10
+                #     JSON.stringify v
 
 
 
 
-        View null, cursive_json_markup_keyset.bind(@) @state.cognito_keyset, 0
+
+
+
+
+
 
 
 
@@ -420,6 +358,8 @@ comp = rr
                 width: '100%'
             scrollview_innards.bind(@)()
 
+            # _.map
+
 
 
 
@@ -437,9 +377,23 @@ comp = rr
 
 
 map_state_to_props = (state) ->
+
+    # x3 = state.get 'all_users'
+    # c '33333'
+    # c Imm.List.isList x3
+    # c _.keys x3
+
+    # x3.map (v, idx) ->
+    #     c 'v1', v
+    #     c 'idx2', idx
+
+
+    # all_users: state.get 'all_users'
+    all_users: state.get 'all_users'
     counter_zero: state.get 'counter_zero'
-    net_info: state.get 'net_info'
-    signin_test_state: state.get 'test3'
+    # net_info: state.get 'net_info'
+    # signin_test_state: state.get 'test3'
+
 
 
 
@@ -463,3 +417,99 @@ map_dispatch_to_props = (dispatch) ->
 
 
 exports.default = rc connect(map_state_to_props, map_dispatch_to_props)(comp)
+
+
+
+
+
+
+
+
+        # Text
+        #     style:
+        #         fontSize: 6
+        #     if  @props.net_info and (@props.net_info.has 'type')
+        #         "net_info: type #{@props.net_info.get 'type' }"
+        # Text
+        #     style:
+        #         fontSize: 6
+        #     if  @props.net_info and (@props.net_info.has 'effectiveType')
+        #         "net_info.effectiveType: #{ @props.net_info.effectiveType }"
+        # Text
+        #     style:
+        #         fontSize: 10
+        #     "<Cognito-State>"
+        # TouchableOpacity
+        #     onPress: =>
+        #     View
+        #         style:
+        #             width: 100
+        #             height: 20
+        #             backgroundColor: 'ivory'
+        #             display: 'flex'
+        #             justifyContent: 'center'
+        #             alignItems: 'center'
+        #         Text
+        #             style:
+        #                 fontSize: 8
+        #             "Logout User"
+        # Text
+        #     style:
+        #         fontSize: 10
+        #     "<Local-Storage-Cognito>"
+
+
+
+        #
+        # TouchableOpacity
+        #     onPress: =>
+        #     View
+        #         style:
+        #             width: 100
+        #             height: 20
+        #             backgroundColor: 'ivory'
+        #             display: 'flex'
+        #             justifyContent: 'center'
+        #             alignItems: 'center'
+        #         Text
+        #             style:
+        #                 fontSize: 8
+        #             "Clear Local Storage"
+        # TouchableOpacity
+        #     onPress: =>
+        #         handle_cognito_auth_030.bind(@) tig
+        #     View
+        #         style:
+        #             width: 100
+        #             height: 20
+        #             backgroundColor: 'ivory'
+        #             display: 'flex'
+        #             justifyContent: 'center'
+        #             alignItems: 'center'
+        #         Text
+        #             style:
+        #                 fontSize: 8
+        #             "Update Cognito AuthState"
+        # TouchableOpacity
+        #     onPress: =>
+        #         handle_try_getId.bind(@)()
+        #     View
+        #         style:
+        #             display: 'flex'
+        #             width: 100
+        #             height: 20
+        #             justifyContent: 'center'
+        #         Text
+        #             style:
+        #                 fontSize: 10
+        #             "try getId call"
+        # if @state.current_user isnt null
+        #     View null,
+        #         Text
+        #             style:
+        #                 fontSize: 8
+        #             "current_user"
+        #         View null, cursive_json_markup_keyset.bind(@) @state.current_user, 0
+
+
+# View null, cursive_json_markup_keyset.bind(@) @state.cognito_keyset, 0

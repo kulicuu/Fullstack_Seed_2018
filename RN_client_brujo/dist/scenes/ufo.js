@@ -262,6 +262,9 @@ handle_try_getId = function() {
 //     else
 //         alert "res3: #{JSON.stringify res3}"
 scrollview_innards = function() {
+  // c (JSON.stringify @props.all_users)
+  // c '777777', Imm.List.isList(@props.all_users)
+  // x3 = @props.all_users
   return View({
     style: {
       display: 'flex',
@@ -271,115 +274,46 @@ scrollview_innards = function() {
       flexDirection: 'column',
       alignItems: 'center'
     }
-  }, Button({
-    title: "test1",
-    onPress: this.props.test1,
+  // Button
+  //     title: "test1"
+  //     onPress: @props.test1
+  //     style:
+  //         width: 100
+  //         height: 100
+  //         backgroundColor: 'white'
+  }, Text({
     style: {
-      width: 100,
-      height: 100,
-      backgroundColor: 'white'
-    }
-  // "test1"
-  }), Text({
-    style: {
-      fontSize: 20,
+      fontSize: 12,
       color: 'cadetblue'
     }
   }, `Terebinth ${this.props.signin_test_state}`), Text({
     style: {
-      fontSize: 8,
-      color: 'darkgrey'
-    }
-  }, `local websocket http connection: :${this.props.counter_zero}`), Text({
-    style: {
-      fontSize: 4,
-      color: 'darkgrey'
-    }
-  }, `local websocket https connection: :${this.props.counter_one}`), Text({
-    style: {
-      fontSize: 6
-    }
-  }, this.props.net_info && (this.props.net_info.has('type')) ? `net_info: type ${this.props.net_info.get('type')}` : void 0), Text({
-    style: {
-      fontSize: 6
-    }
-  }, this.props.net_info && (this.props.net_info.has('effectiveType')) ? `net_info.effectiveType: ${this.props.net_info.effectiveType}` : void 0), Text({
-    style: {
-      fontSize: 10
-    }
-  }, "<Cognito-State>"), TouchableOpacity({
-    onPress: () => {}
-  }, View({
-    style: {
-      width: 100,
-      height: 20,
-      backgroundColor: 'ivory',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    }
-  }, Text({
-    style: {
       fontSize: 8
     }
-  }, "Logout User"))), Text({
-    style: {
-      fontSize: 10
-    }
-  }, "<Local-Storage-Cognito>"), TouchableOpacity({
-    onPress: () => {}
-  }, View({
-    style: {
-      width: 100,
-      height: 20,
-      backgroundColor: 'ivory',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    }
-  }, Text({
-    style: {
-      fontSize: 8
-    }
-  }, "Clear Local Storage"))), TouchableOpacity({
-    onPress: () => {
-      return handle_cognito_auth_030.bind(this)(tig);
-    }
-  }, View({
-    style: {
-      width: 100,
-      height: 20,
-      backgroundColor: 'ivory',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    }
-  }, Text({
-    style: {
-      fontSize: 8
-    }
-  }, "Update Cognito AuthState"))), TouchableOpacity({
-    onPress: () => {
-      return handle_try_getId.bind(this)();
-    }
-  }, View({
-    style: {
-      display: 'flex',
-      width: 100,
-      height: 20,
-      justifyContent: 'center'
-    }
-  }, Text({
-    style: {
-      fontSize: 10
-    }
-  }, "try getId call"))), this.state.current_user !== null ? View(null, Text({
-    style: {
-      fontSize: 8
-    }
-  }, "current_user"), View(null, cursive_json_markup_keyset.bind(this)(this.state.current_user, 0))) : void 0, View(null, cursive_json_markup_keyset.bind(this)(this.state.cognito_keyset, 0)));
+  // color: 'darkgrey'
+  }, `local websocket http connection: :${  // Text
+  //     style:
+  //         fontSize: 4
+  //         # color: 'darkgrey'
+  //     "local websocket https connection: :#{@props.counter_one}"
+this.props.counter_zero}`), _.map(this.props.all_users, function(v, idx) {
+    return View({
+      key: `textusers:${idx}`,
+      style: {
+        margin: 10
+      }
+    }, Text({
+      style: {
+        fontSize: 10
+      }
+    }, v.email));
+  }));
 };
 
+// Text
+//     style:
+//         fontSize: 10
+//     JSON.stringify v
 comp = rr({
   componentDidUpdate: function(prevProps, prevState, snapshot) {
     if ((this.state.cognito_current_user !== null) && (this.state.cognito_current_user !== prevState.cognito_current_user)) {
@@ -414,14 +348,26 @@ comp = rr({
   }
 });
 
+// _.map
 map_state_to_props = function(state) {
   return {
-    counter_zero: state.get('counter_zero'),
-    net_info: state.get('net_info'),
-    signin_test_state: state.get('test3')
+    // x3 = state.get 'all_users'
+    // c '33333'
+    // c Imm.List.isList x3
+    // c _.keys x3
+
+    // x3.map (v, idx) ->
+    //     c 'v1', v
+    //     c 'idx2', idx
+
+    // all_users: state.get 'all_users'
+    all_users: state.get('all_users'),
+    counter_zero: state.get('counter_zero')
   };
 };
 
+// net_info: state.get 'net_info'
+// signin_test_state: state.get 'test3'
 map_dispatch_to_props = function(dispatch) {
   return {
     test1: function() {
@@ -439,3 +385,88 @@ map_dispatch_to_props = function(dispatch) {
 };
 
 exports.default = rc(connect(map_state_to_props, map_dispatch_to_props)(comp));
+
+// Text
+//     style:
+//         fontSize: 6
+//     if  @props.net_info and (@props.net_info.has 'type')
+//         "net_info: type #{@props.net_info.get 'type' }"
+// Text
+//     style:
+//         fontSize: 6
+//     if  @props.net_info and (@props.net_info.has 'effectiveType')
+//         "net_info.effectiveType: #{ @props.net_info.effectiveType }"
+// Text
+//     style:
+//         fontSize: 10
+//     "<Cognito-State>"
+// TouchableOpacity
+//     onPress: =>
+//     View
+//         style:
+//             width: 100
+//             height: 20
+//             backgroundColor: 'ivory'
+//             display: 'flex'
+//             justifyContent: 'center'
+//             alignItems: 'center'
+//         Text
+//             style:
+//                 fontSize: 8
+//             "Logout User"
+// Text
+//     style:
+//         fontSize: 10
+//     "<Local-Storage-Cognito>"
+
+// TouchableOpacity
+//     onPress: =>
+//     View
+//         style:
+//             width: 100
+//             height: 20
+//             backgroundColor: 'ivory'
+//             display: 'flex'
+//             justifyContent: 'center'
+//             alignItems: 'center'
+//         Text
+//             style:
+//                 fontSize: 8
+//             "Clear Local Storage"
+// TouchableOpacity
+//     onPress: =>
+//         handle_cognito_auth_030.bind(@) tig
+//     View
+//         style:
+//             width: 100
+//             height: 20
+//             backgroundColor: 'ivory'
+//             display: 'flex'
+//             justifyContent: 'center'
+//             alignItems: 'center'
+//         Text
+//             style:
+//                 fontSize: 8
+//             "Update Cognito AuthState"
+// TouchableOpacity
+//     onPress: =>
+//         handle_try_getId.bind(@)()
+//     View
+//         style:
+//             display: 'flex'
+//             width: 100
+//             height: 20
+//             justifyContent: 'center'
+//         Text
+//             style:
+//                 fontSize: 10
+//             "try getId call"
+// if @state.current_user isnt null
+//     View null,
+//         Text
+//             style:
+//                 fontSize: 8
+//             "current_user"
+//         View null, cursive_json_markup_keyset.bind(@) @state.current_user, 0
+
+// View null, cursive_json_markup_keyset.bind(@) @state.cognito_keyset, 0
