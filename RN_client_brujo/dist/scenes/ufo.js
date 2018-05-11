@@ -306,14 +306,14 @@ this.props.counter_zero}`), _.map(this.props.all_users, function(v, idx) {
       style: {
         fontSize: 10
       }
-    }, v.email));
+    }, v.email), Text({
+      style: {
+        fontSize: 10
+      }
+    }, JSON.stringify(_.keys(v))));
   }));
 };
 
-// Text
-//     style:
-//         fontSize: 10
-//     JSON.stringify v
 comp = rr({
   componentDidUpdate: function(prevProps, prevState, snapshot) {
     if ((this.state.cognito_current_user !== null) && (this.state.cognito_current_user !== prevState.cognito_current_user)) {

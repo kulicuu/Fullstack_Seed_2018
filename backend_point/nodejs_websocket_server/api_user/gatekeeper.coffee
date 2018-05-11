@@ -291,7 +291,7 @@ aa.send_signup_candide = ({ payload, spark }) ->
                 reason: 'There was an error.'
     .then ({ status }) ->
         if status is true
-            c 'stnhstnh'
+
             create_new_user { email_candide, pwd }
             .then ({ status, user }) ->
                 handle_session_initialise { the_user: user, spark }
@@ -302,7 +302,7 @@ aa.send_signup_candide = ({ payload, spark }) ->
                     spark.write
                         type: 'res_signup'
                         payload: { status, the_token }
-                    # r.table('users').getAll() cn
+
         else
             spark.write
                 type: 'res_signup'

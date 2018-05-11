@@ -11,13 +11,6 @@ api = fp.assign api, require('./spawn_stuff').default
 api = fp.assign api, require('./worker_api').default
 api = fp.assign api, require('./generic_api_calls').default
 
-# api = fp.assign api, require('./generic_api_call').default
-# api = fp.assign api, require('./spawn').default
-# api = fp.assign api, require('./meta_dispatch').default
-# api = fp.assign api, require('./to_commander').default
-# api = fp.assign api, require('./worker_command').default
-
-
 
 
 
@@ -33,13 +26,7 @@ effects_precursor = ({ Dispatch, env }) ->
         Dispatch.emit 'new_action', { action: opts }
 
     ({ state }) ->
-        c 'state', state
         state.get('effects').map (effect, eid) ->
-        # c state.get('effects'), 'effects'
-        # _.map state.get('effects'), (effect, eid) ->
-            # etype = effect.get 'type'
-            c 'effect', effect
-            c 'eid', eid
             etype = effect.type
             if ( _.includes keys_api, etype )
                 api[etype] { effect, state, dispatch }

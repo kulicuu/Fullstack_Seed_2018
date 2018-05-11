@@ -62,7 +62,7 @@ aa.report_for_duty = ({ state, action }) ->
                 spark_id: spark_id
                 the_token: the_token
                 mission_code: "mission_300"
-                user_assigned: some_avail_user.get('arq').toJS()
+                user_assigned: some_avail_user.get('arq')
 
 
     state

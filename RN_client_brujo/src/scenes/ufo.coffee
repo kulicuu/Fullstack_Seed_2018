@@ -303,10 +303,10 @@ scrollview_innards = ->
                     style:
                         fontSize: 10
                     v.email
-                # Text
-                #     style:
-                #         fontSize: 10
-                #     JSON.stringify v
+                Text
+                    style:
+                        fontSize: 10
+                    JSON.stringify (_.keys v)
 
 
 

@@ -59,7 +59,7 @@ initial_state = ({ env }) ->
                 username: 'zeke'
                 email: "zeke@l0pheu"
                 pwd: "489puhseut"
-        winston:
+        winston: Imm.Map
             assigned: false
             ready: false
             arq: Imm.Map
