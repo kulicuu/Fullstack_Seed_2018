@@ -16,11 +16,9 @@ keys_api_arq = _.keys api_arq
 effects_precursor = ({ state_store }) ->
     ({ effects_q }) ->
         if _.size(effects_q) > 0
-            # c 'doing effects', effects_q
             _.map effects_q, (effect, eid) ->
                 etype = effect.type
                 delete effects_q[eid]
-                # c 'doing effect', etype, effects_q
                 if ( _.includes keys_api_arq, etype )
                     api_arq[etype] { effect, eid, state_store }
                 else

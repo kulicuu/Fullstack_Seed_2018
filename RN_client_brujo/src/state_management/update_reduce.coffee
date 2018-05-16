@@ -16,16 +16,13 @@ api_arq.placeholder = ({ state, action }) ->
 keys_api_arq = _.keys api_arq
 
 
-
 lookup_precursor = ({ effects_q }) ->
     (state, action) ->
-        # c 'action.type', action.type
         if _.includes(keys_api_arq, action.type)
             api_arq[action.type] { state, action, effects_q }
         else
             c 'no-op in updates', action.type
             state
-
 
 
 exports.default = lookup_precursor

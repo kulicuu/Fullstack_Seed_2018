@@ -21,7 +21,6 @@
 
   lookup_precursor = function({effects_q}) {
     return function(state, action) {
-      // c 'action.type', action.type
       if (_.includes(keys_api_arq, action.type)) {
         return api_arq[action.type]({state, action, effects_q});
       } else {

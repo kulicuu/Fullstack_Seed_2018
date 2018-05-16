@@ -16,6 +16,7 @@
     "buffer": "5.1.0",
     "coffeescript": "latest",
     "create-react-class": "latest",
+    "immer": "latest",
     "immutable": "4.0.0-rc.9",
     "jsonwebtoken": "latest",
     "lodash": "4.17.4",

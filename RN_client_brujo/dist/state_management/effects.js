@@ -20,12 +20,10 @@
   effects_precursor = function({state_store}) {
     return function({effects_q}) {
       if (_.size(effects_q) > 0) {
-        // c 'doing effects', effects_q
         return _.map(effects_q, function(effect, eid) {
           var etype;
           etype = effect.type;
           delete effects_q[eid];
-          // c 'doing effect', etype, effects_q
           if (_.includes(keys_api_arq, etype)) {
             return api_arq[etype]({effect, eid, state_store});
           } else {

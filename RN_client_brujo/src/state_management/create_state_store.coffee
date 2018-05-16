@@ -20,17 +20,8 @@ import thunk from 'redux-thunk'
 import { EventRegister } from 'react-native-event-listeners'
 
 
-
-
-
-
-
 import { Provider } from 'react-redux'
 rc_Provider = rc Provider
-
-
-
-
 
 
 effects_q =
@@ -38,10 +29,6 @@ effects_q =
         type: 'init_primus'
     # "#{shortid()}":
     #     type: 'init_netinfo'
-
-
-
-
 
 
 
@@ -54,15 +41,11 @@ effects = require('./effects').default { state_store }
 
 
 
-
-
 effect_trigger = ->
     effects { effects_q }
 
 
 state_store.subscribe effect_trigger
-
-
 effects { effects_q }
 
 

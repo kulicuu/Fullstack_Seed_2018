@@ -10,12 +10,7 @@ global.c = console.log.bind console
 aa = {}
 
 
-# aa.res_send_signup_candide = ({ state, data }) ->
-#     c 'res_send_signup_candide has data', data
-#     # signup_status = d
-
 aa = fp.assign aa, require('./brujo_msgs').default
-
 
 
 keys_aa = _.keys aa

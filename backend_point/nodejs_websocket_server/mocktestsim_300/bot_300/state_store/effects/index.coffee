@@ -24,21 +24,23 @@ effects_precursor = ({ Dispatch, env }) ->
     dispatch = (opts) ->
         Dispatch.emit 'new_action', { action: opts }
 
-    ({ state }) ->
-        c 'state', state
-        state.get('effects').map (effect, eid) ->
+    ({ effects_q, state }) ->
+        # c 'state', state
+        # state.get('effects').map (effect, eid) ->
         # c state.get('effects'), 'effects'
-        # _.map state.get('effects'), (effect, eid) ->
-            # etype = effect.get 'type'
-            c 'effect', effect
-            c 'eid', eid
-            etype = effect.type
-            if ( _.includes keys_api, etype )
-                c '111111111'
-                api[etype] { effect, state, dispatch }
-            else
-                c 'No-op in effects with type', etype
-                # NOTE No logs in prod. TODO Look into production logging for this sort of thing, debounced
+
+        if _.size(effects_q) > 0
+
+            # _.map state.get('effects'), (effect, eid) ->
+            _.map effects_q, (effect, eid) ->
+                etype = effect.type
+                delete effects_q[eid]
+                if ( _.includes keys_api, etype )
+                    c '111111111'
+                    api[etype] { effect, state, dispatch }
+                else
+                    c 'No-op in effects with type', etype
+                    # NOTE No logs in prod. TODO Look into production logging for this sort of thing, debounced
 
 
 
