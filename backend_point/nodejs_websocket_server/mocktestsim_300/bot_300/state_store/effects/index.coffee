@@ -25,13 +25,11 @@ effects_precursor = ({ Dispatch, env }) ->
         Dispatch.emit 'new_action', { action: opts }
 
     ({ effects_q, state }) ->
-        # c 'state', state
-        # state.get('effects').map (effect, eid) ->
-        # c state.get('effects'), 'effects'
 
+        c color.purple 99999999999, on
+        c effects_q, 'effects_q'
         if _.size(effects_q) > 0
 
-            # _.map state.get('effects'), (effect, eid) ->
             _.map effects_q, (effect, eid) ->
                 etype = effect.type
                 delete effects_q[eid]

@@ -24,6 +24,7 @@ import { Provider } from 'react-redux'
 rc_Provider = rc Provider
 
 
+# NOTE this could be made immutable, but don't see any reason for it.
 effects_q =
     "#{shortid()}":
         type: 'init_primus'
@@ -43,6 +44,8 @@ effects = require('./effects').default { state_store }
 
 effect_trigger = ->
     effects { effects_q }
+    # NOTE : should replace with the following, because the ref is here
+    # effects()
 
 
 state_store.subscribe effect_trigger

@@ -24,10 +24,10 @@ aa = {}
 missions = {}
 
 
-missions.mission_300 = ({ state, action }) ->
+missions.mission_300 = ({ state, action, effects_q }) ->
     c '3030303030303', (state.get 'user_assigned')
 
-    state = state.setIn ['effects', shortid()],
+    effects_q["#{shortid()}"] =
         type: 'gapic_tbnth'
         payload:
             type: 'send_signup_candide'
@@ -38,7 +38,7 @@ missions.mission_300 = ({ state, action }) ->
     state
 
 
-aa.res_report_for_duty = ({ state, command }) ->
+aa.res_report_for_duty = ({ state, command, effects_q }) ->
     # c 'command', command, 'command'
     { the_token, mission_code, user_assigned, stuff_assigned } = command.payload
     c color.red((JSON.stringify user_assigned), on), 'user_assigned'

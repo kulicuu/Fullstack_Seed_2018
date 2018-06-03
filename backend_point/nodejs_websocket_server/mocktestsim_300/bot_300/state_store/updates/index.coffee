@@ -13,7 +13,7 @@ keys_api = _.keys api
 updates_precursor = ({ effects_q }) ->
     ({ state, action }) ->
         if _.includes(keys_api, action.type)
-            api[action.type] { state, action }
+            api[action.type] { state, action, effects_q }
         else
             # NOTE: Remove logs for heavy load performance.
             unless action.type is 'heartbeat'
