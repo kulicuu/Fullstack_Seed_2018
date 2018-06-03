@@ -1,26 +1,47 @@
 {
-  "name": "brujo_june_2018",
-  "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "react-native-scripts": "1.14.0",
-    "jest-expo": "~27.0.0",
-    "react-test-renderer": "16.3.1"
-  },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
-  "scripts": {
-    "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
-    "test": "jest"
-  },
-  "jest": {
-    "preset": "jest-expo"
-  },
-  "dependencies": {
-    "expo": "^27.0.1",
-    "react": "16.3.1",
-    "react-native": "~0.55.2"
-  }
+    "name": "brujo_june_2018",
+    "version": "0.1.0",
+    "private": true,
+    "devDependencies": {
+        "gulp": "^4.0.0",
+        "gulp-clean": "latest",
+        "gulp-coffee": "latest",
+        "gulp-coffee-react-transform": "latest",
+        "gulp-coffeelint": "latest",
+        "gulp-coffeescript": "latest",
+        "gulp-ignore": "latest",
+        "gulp-util": "latest",
+        "react-native-scripts": "1.14.0",
+        "jest-expo": "~27.0.0",
+        "react-test-renderer": "16.3.1"
+    },
+    "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+    "scripts": {
+        "start": "react-native-scripts start",
+        "eject": "react-native-scripts eject",
+        "android": "react-native-scripts android",
+        "ios": "react-native-scripts ios",
+        "test": "jest"
+    },
+    "jest": {
+        "preset": "jest-expo"
+    },
+    "dependencies": {
+        "babel-jest": "22.4.1",
+        "babel-preset-react-native": "4.0.0",
+        "amazon-cognito-identity-js": "latest",
+        "aws-sdk": "latest",
+        "bash-color": "latest",
+        "coffeescript": "latest",
+        "expo": "^27.0.1",
+        "immutable": "latest",
+        "lodash": "latest",
+        "primus": "latest",
+        "react": "16.3.1",
+        "react-native": "~0.55.2",
+        "react-redux": "latest",
+        "redux": "latest",
+        "redux-thunk": "latest",
+        "shortid": "latest"
+    }
 }
