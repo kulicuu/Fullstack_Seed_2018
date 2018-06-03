@@ -22,7 +22,7 @@ rc_Provider = rc Provider
 
 
 # nexus = require('./nexus').default
-# import state_store from './state_management/create_state_store'
+import state_store from './state_management/create_state_store'
 
 
 # exports.default = rr

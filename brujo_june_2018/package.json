@@ -39,6 +39,7 @@
         "primus": "latest",
         "react": "16.3.1",
         "react-native": "~0.55.2",
+        "react-native-event-listeners": "latest",
         "react-redux": "latest",
         "redux": "latest",
         "redux-thunk": "latest",
